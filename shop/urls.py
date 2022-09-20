@@ -1,0 +1,13 @@
+from django.contrib import admin
+from django.urls import path
+from django.shortcuts import render
+from . import views
+
+def index(request):
+    return render(request, 'index.html')
+
+urlpatterns = [
+    path('', views.home),
+    path('admin/', admin.site.urls),
+    path('', index),
+]
